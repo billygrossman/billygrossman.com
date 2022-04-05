@@ -1,6 +1,6 @@
 <template>
   <ul v-if="items" class="detail-list">
-    <HTMLContentRenderer
+    <UtilityHTMLContentRenderer
       v-for="(item, index) in items"
       :content="item"
       :key="index"
@@ -8,17 +8,17 @@
       class="detail-list__item"
       :class="`detail-list__item--${index}`"
     >
-    </HTMLContentRenderer>
+    </UtilityHTMLContentRenderer>
   </ul>
 </template>
 
 <script>
-  import HTMLContentRenderer from './HTMLContentRenderer';
+  import UtilityHTMLContentRenderer from './UtilityHTMLContentRenderer';
 
   export default {
-    name: 'DetailList',
+    name: 'UtilityDetailList',
     components: {
-      HTMLContentRenderer,
+      UtilityHTMLContentRenderer,
     },
     props: {
       /**

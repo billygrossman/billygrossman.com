@@ -4,15 +4,19 @@
       <h1 class="header__title">
         {{ content.firstName }}<br />{{ content.lastName }}
       </h1>
+
       <p class="header__subtitle">{{ content.professionalTitle }}</p>
     </div>
+
     <div class="header__right">
       <p>{{ content.location }}</p>
+
       <p>
         <a :href="`mailto:${content.email}`">
           {{ content.email }}
         </a>
       </p>
+
       <p>
         <a :href="`//${content.website}`">
           {{ content.website }}
@@ -75,6 +79,10 @@
       font-size: 8vw;
     }
 
+    @media print {
+      text-shadow: 0 0;
+    }
+
     @media (min-width: $layout-breakpoint-large) {
       font-size: 6em;
     }
@@ -97,16 +105,5 @@
   .header__right p {
     margin: 8px 0;
     font-size: 1.15em;
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 2px solid $accent-primary;
-      transition: all 0.2s ease;
-
-      &:hover {
-        border-color: $accent-secondary;
-      }
-    }
   }
 </style>

@@ -105,4 +105,10 @@
       background: $accent-secondary;
     }
   }
+
+  @media print {
+    .navigation {
+      display: none;
+    }
+  }
 </style>

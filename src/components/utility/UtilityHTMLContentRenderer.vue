@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: 'HTMLContentRenderer',
+    name: 'UtilityHTMLContentRenderer',
     inheritAttrs: true,
     props: {
       /**

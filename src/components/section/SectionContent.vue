@@ -8,11 +8,11 @@
     </div>
 
     <div class="content-section__col content-section__col--right">
-      <HTMLContentRenderer v-if="content" :content="content">
-      </HTMLContentRenderer>
+      <UtilityHTMLContentRenderer v-if="content" :content="content">
+      </UtilityHTMLContentRenderer>
 
       <div v-if="details.length" class="content-section__details">
-        <DetailList :items="details"></DetailList>
+        <UtilityDetailList :items="details"></UtilityDetailList>
       </div>
 
       <slot name="main"></slot>
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-  import DetailList from '../utility/DetailList';
-  import HTMLContentRenderer from '../utility/HTMLContentRenderer';
+  import UtilityDetailList from '../utility/UtilityDetailList';
+  import UtilityHTMLContentRenderer from '../utility/UtilityHTMLContentRenderer';
 
   export default {
     name: 'SectionContent',
     components: {
-      DetailList,
-      HTMLContentRenderer,
+      UtilityDetailList,
+      UtilityHTMLContentRenderer,
     },
     props: {
       /**
@@ -74,6 +74,8 @@
   }
 
   .content-section__col {
+    width: 100%;
+
     &--left {
       @media (min-width: $layout-breakpoint-medium) {
         flex: 0 0 23%;

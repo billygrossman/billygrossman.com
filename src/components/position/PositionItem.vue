@@ -7,27 +7,27 @@
 
     <p class="position__dates">{{ startDate }} - {{ endDate }}</p>
 
-    <HTMLContentRenderer
+    <UtilityHTMLContentRenderer
       class="position__description"
       v-if="description"
       :content="description"
-    ></HTMLContentRenderer>
+    ></UtilityHTMLContentRenderer>
 
     <div class="position__responsibilities">
-      <DetailList :items="responsibilities"></DetailList>
+      <UtilityDetailList :items="responsibilities"></UtilityDetailList>
     </div>
   </div>
 </template>
 
 <script>
-  import DetailList from '../utility/DetailList';
-  import HTMLContentRenderer from '../utility/HTMLContentRenderer';
+  import UtilityDetailList from '../utility/UtilityDetailList';
+  import UtilityHTMLContentRenderer from '../utility/UtilityHTMLContentRenderer';
 
   export default {
     name: 'PositionItem',
     components: {
-      DetailList,
-      HTMLContentRenderer,
+      UtilityDetailList,
+      UtilityHTMLContentRenderer,
     },
     props: {
       /**
@@ -42,8 +42,8 @@
        * End date
        */
       description: {
-        type: String,
-        default: '',
+        type: [String, Boolean],
+        default: false,
       },
 
       /**
@@ -108,6 +108,7 @@
   .position__dates {
     font-size: 14px;
     letter-spacing: 2px;
+    margin: 0;
   }
 
   .position__description {

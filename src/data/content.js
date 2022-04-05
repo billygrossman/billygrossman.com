@@ -27,13 +27,13 @@ export const content = {
         title: 'Skills',
         content: `I am a full stack developer focusing more on frontend technology and user facing applications. I also enjoy API design and cloud architecture.`,
         details: [
-          'Highly skilled in creating performant <span class="tag">HTML</span>, <span class="tag">CSS</span>',
-          'Experienced with JavaScript, Frameworks (<span class="tag">Vue</span>, <span class="tag">Nuxt</span>, <span class="tag">React</span>) and Templating Languages (<span class="tag">Pug</span>, <span class="tag">Jinja2</span>)',
-          'Passionate about <span class="tag">CSS</span> Methodologies (I lean to <span class="tag">BEM</span>) and CSS Preprocessors (leaning hard at <span class="tag">SCSS</span>)',
-          'Proficient with Task Runners / Build Tools (<span class="tag">WebPack</span>, <span class="tag">Grunt</span>, <span class="tag">Gulp</span>) and Package Managers (<span class="tag">NPM</span>, <span class="tag">Yarn</span>, <span class="tag">Composer</span>) and <span class="tag">Git</span> Version Control Systems',
-          'Skilled in creating Design Systems, <span class="tag">Component Libraries</span>, Prototypes and Style Guides',
-          'Advocate for <span class="tag">WCAG Website Compliance Standards</span> and Accessibility for all users',
-          'Proficient with cloud technologies (<span class="tag">AWS</span>) and containerization (<span class="tag">Docker</span>)',
+          'Highly skilled in creating performant <span class="text--tag">HTML</span>, <span class="text--tag">CSS</span>',
+          'Experienced with JavaScript, Frameworks (<span class="text--tag">Vue</span>, <span class="text--tag">Nuxt</span>, <span class="text--tag">React</span>) and Templating Languages (<span class="text--tag">Pug</span>, <span class="text--tag">Jinja2</span>)',
+          'Passionate about <span class="text--tag">CSS</span> Methodologies (I lean to <span class="text--tag">BEM</span>) and CSS Preprocessors (leaning hard at <span class="text--tag">SCSS</span>)',
+          'Proficient with Task Runners / Build Tools (<span class="text--tag">WebPack</span>, <span class="text--tag">Grunt</span>, <span class="text--tag">Gulp</span>) and Package Managers (<span class="text--tag">NPM</span>, <span class="text--tag">Yarn</span>, <span class="text--tag">Composer</span>) and <span class="text--tag">Git</span> Version Control Systems',
+          'Skilled in creating Design Systems, <span class="text--tag">Component Libraries</span>, Prototypes and Style Guides',
+          'Advocate for <span class="text--tag">WCAG Website Compliance Standards</span> and Accessibility for all users',
+          'Proficient with cloud technologies (<span class="text--tag">AWS</span>) and containerization (<span class="text--tag">Docker</span>)',
         ],
       },
     ],
@@ -41,15 +41,23 @@ export const content = {
   tertiary: {
     sections: [
       {
-        title: 'Education',
-        content: `<h3>Hands on Technology Transfer — PHP Programming</h3>
-          <h4>FEBRUARY 2012</h4>
-          <p>Completed PHP programming course, covering topics such as arrays & data types, working with MySQL, building dynamic web applications, built-in PHP functions and working with Apache configurations.</p>
-
-          <h3>New England Institute of Technology</h3>
-          <h4>2003 - 2005</h4>
-          <p>Associates Degree – Building Construction and Cabinet making</p>.`,
-        details: [],
+        title: 'More...',
+        content: `
+          <h3>This Website</h3>
+          <p>
+            The source code for this personal web application <a href="https://github.com/billygrossman/billygrossman.com" target="_blank">
+            is available on Github</a>. It's a failry simple application, built in <span class="text--tag">Vue</span> and deployed to AWS S3.
+            I will continue to make improvements and updates to this application as it can serve as a clean frontend boilerplate.
+          </p>
+          <p>You can also check out the <a href="/components">Design Guide/Component library</a> to see how I like to structure Vue components.</p>
+          <p>Here are some features that are on deck:</p>
+        `,
+        details: [
+          'Move content to cloud document store',
+          'Update to use <span class="text--tag">Typescript</span>',
+          'Implement robust grid layout system',
+          'Add more text and typography helper classes',
+        ],
       },
     ],
   },

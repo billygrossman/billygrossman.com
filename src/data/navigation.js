@@ -1,6 +1,11 @@
 export const navigation = {
   primary: [
     {
+      name: '< bg/>',
+      href: '/',
+      target: '_self',
+    },
+    {
       name: 'Github',
       href: 'https://github.com/billygrossman/',
       target: '_blank',

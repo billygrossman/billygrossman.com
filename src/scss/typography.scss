@@ -1,0 +1,64 @@
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid $accent-primary;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $accent-secondary;
+  }
+}
+
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 12px 0;
+  line-height: 1.5em;
+}
+
+// Text & Typography helpers
+.text--tag {
+  font-weight: bold;
+  background: #74cbdf;
+  border-radius: 3px;
+  font-size: 80%;
+  padding: 0px 5px;
+  letter-spacing: 1px;
+  display: inline;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--mono {
+  font-family: monospace;
+}
+
+// Text Color Helpers
+.color--blue {
+  color: $text-color-blue;
+}
+
+.color--green {
+  color: $text-color-green;
+}
+
+.color--gray {
+  color: $text-color-gray;
+}
+
+.color--red {
+  color: $text-color-red;
+}
