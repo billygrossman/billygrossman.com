@@ -55,11 +55,3 @@
     },
   };
 </script>
-
-<style lang="scss">
-  main {
-    margin: 5em auto;
-    max-width: $contain-width;
-    padding: 0 3em;
-  }
-</style>

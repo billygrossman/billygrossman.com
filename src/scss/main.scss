@@ -17,12 +17,21 @@ body {
   background-color: #fff;
 }
 
+main {
+  margin: 5em auto;
+}
 img {
   max-width: 100%;
   height: auto;
 }
 
 .container {
+  &--inner {
+    max-width: $contain-width;
+    margin: 0 auto;
+    padding: 0 3em;
+  }
+
   &--border {
     border: 1px solid $border-color-default;
     padding: 24px;

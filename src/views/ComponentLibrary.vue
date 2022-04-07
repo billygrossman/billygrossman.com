@@ -213,6 +213,7 @@
         colors: [
           { name: '$accent-primary', value: '#74cbdf' },
           { name: '$accent-secondary', value: '#a25ffa' },
+          { name: '$background-color-gray', value: '#f4f4f4' },
           { name: '$border-color-default', value: '#ddd' },
           { name: '$text-color-gray', value: '#424242' },
           { name: '$text-color-blue', value: '#1867c0' },

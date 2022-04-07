@@ -1,6 +1,6 @@
 <template>
   <nav class="navigation">
-    <div class="navigation__wrapper">
+    <div class="navigation__inner">
       <ul class="navigation__primary">
         <li v-for="(item, index) in items.primary" :key="index">
           <a
@@ -33,7 +33,7 @@
   import { navigation } from '../../data/navigation';
 
   export default {
-    name: 'SectionNavigation',
+    name: 'GlobalNavigation',
     data() {
       return {
         items: navigation,
@@ -54,7 +54,7 @@
     text-align: center;
   }
 
-  .navigation__wrapper {
+  .navigation__inner {
     max-width: $contain-width;
     margin: 0 auto;
 

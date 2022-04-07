@@ -1,17 +1,22 @@
 <template>
-  <SectionNavigation></SectionNavigation>
+  <GlobalNavigation></GlobalNavigation>
 
-  <main :class="`page page--${$route.name}`">
+  <main class="container--inner" :class="`page page--${$route.name}`">
     <router-view />
   </main>
+
+  <GlobalFooter></GlobalFooter>
 </template>
 
 <script>
-  import SectionNavigation from '@/components/section/SectionNavigation';
+  import GlobalFooter from '@/components/global/GlobalFooter';
+  import GlobalNavigation from '@/components/global/GlobalNavigation';
+
   export default {
     name: 'App',
     components: {
-      SectionNavigation,
+      GlobalFooter,
+      GlobalNavigation,
     },
   };
 </script>
