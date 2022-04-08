@@ -1,10 +1,11 @@
 <template>
-  <ul v-if="items" class="detail-list">
+  <ul v-if="items" class="detail-list" data-test="detail-list">
     <UtilityHTMLContentRenderer
       v-for="(item, index) in items"
       :content="item"
       :key="index"
       tag="li"
+      data-test="detail-list-item"
       class="detail-list__item"
       :class="`detail-list__item--${index}`"
     >
