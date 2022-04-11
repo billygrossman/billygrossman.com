@@ -4,8 +4,9 @@ import VueGtag from 'vue-gtag';
 import router from './router';
 
 import './scss/main.scss';
+import store from './store'
 
-const app = createApp(App);
+const app = createApp(App).use(store);
 
 app.use(router);
 app.use(VueGtag, {
