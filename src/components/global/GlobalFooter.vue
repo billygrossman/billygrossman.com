@@ -2,7 +2,9 @@
   <footer class="footer">
     <div class="footer__inner container--inner">
       <div class="footer__first">
-        <p><span class="text--tag">Billy Grossman</span></p>
+        <p>
+          <span class="text--tag">{{ fullName }}</span>
+        </p>
       </div>
       <div class="footer__second">
         <p><a href="/">Home</a></p>
@@ -16,17 +18,15 @@
 </template>
 
 <script>
-  import { content } from '@/data/content';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'GlobalFooter',
-    data() {
-      return {
-        /**
-         * @var {String} email
-         */
-        email: content.contact.email,
-      };
+    computed: {
+      ...mapGetters('content', {
+        email: 'getContactEmail',
+        fullName: 'getContactFullName',
+      }),
     },
   };
 </script>

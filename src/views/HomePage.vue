@@ -1,8 +1,8 @@
 <template>
-  <SectionHeader :content="content.contact"></SectionHeader>
+  <SectionHeader :content="contact"></SectionHeader>
 
   <SectionContent
-    v-for="(section, index) in content.primary.sections"
+    v-for="(section, index) in primaryContent.sections"
     :key="index"
     :heading="section.title"
     :content="section.content"
@@ -17,7 +17,7 @@
   </SectionContent>
 
   <SectionContent
-    v-for="(section, index) in content.tertiary.sections"
+    v-for="(section, index) in tertiaryContent.sections"
     :key="index"
     :heading="section.title"
     :content="section.content"
@@ -27,8 +27,7 @@
 </template>
 
 <script>
-  import { content } from '@/data/content';
-  import { positions } from '@/data/positions';
+  import { mapGetters } from 'vuex';
 
   import PositionGroup from '@/components/position/PositionGroup';
   import SectionHeader from '@/components/section/SectionHeader';
@@ -40,18 +39,15 @@
       SectionContent,
       SectionHeader,
     },
-    data() {
-      return {
-        /**
-         * @var {Object} content Page content
-         */
-        content: content,
-
-        /**
-         * @var {Object} resume Resume data
-         */
-        positions: positions,
-      };
+    computed: {
+      ...mapGetters('positions', {
+        positions: 'getPositions',
+      }),
+      ...mapGetters('content', {
+        contact: 'getContact',
+        primaryContent: 'getPrimaryContent',
+        tertiaryContent: 'getTertiaryContent',
+      }),
     },
   };
 </script>

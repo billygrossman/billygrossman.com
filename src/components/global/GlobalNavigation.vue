@@ -2,7 +2,7 @@
   <nav class="navigation">
     <div class="navigation__inner">
       <ul class="navigation__primary">
-        <li v-for="(item, index) in items.primary" :key="index">
+        <li v-for="(item, index) in primary" :key="index">
           <a
             class="navigation__link"
             :href="item.href"
@@ -14,7 +14,7 @@
         </li>
       </ul>
       <ul class="navigation__utility">
-        <li v-for="(item, index) in items.utility" :key="index">
+        <li v-for="(item, index) in utility" :key="index">
           <a
             class="navigation__button"
             :href="item.href"
@@ -30,14 +30,15 @@
 </template>
 
 <script>
-  import { navigation } from '@/data/navigation';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'GlobalNavigation',
-    data() {
-      return {
-        items: navigation,
-      };
+    computed: {
+      ...mapGetters('navigation', {
+        primary: 'getPrimary',
+        utility: 'getUtility',
+      }),
     },
   };
 </script>
