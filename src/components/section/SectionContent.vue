@@ -1,17 +1,29 @@
 <template>
   <section
-    class="content-section"
-    :class="`content-section--${heading.toLowerCase()}`"
+    class="section-content"
+    data-test="section-content"
+    :class="`section-content--${heading.toLowerCase()}`"
   >
-    <div class="content-section__col content-section__col--left">
-      <h2>{{ heading }}</h2>
+    <div class="section-content__col section-content__col--first">
+      <h2 data-test="section-content-heading">{{ heading }}</h2>
     </div>
 
-    <div class="content-section__col content-section__col--right">
-      <UtilityHTMLContentRenderer v-if="content" :content="content">
+    <div
+      class="section-content__col section-content__col--second"
+      data-test="section-content-body"
+    >
+      <UtilityHTMLContentRenderer
+        v-if="content"
+        :content="content"
+        data-test="section-content-content"
+      >
       </UtilityHTMLContentRenderer>
 
-      <div v-if="details.length" class="content-section__details">
+      <div
+        v-if="details.length"
+        class="section-content__details"
+        data-test="section-content-list"
+      >
         <UtilityDetailList :items="details"></UtilityDetailList>
       </div>
 
@@ -21,8 +33,8 @@
 </template>
 
 <script>
-  import UtilityDetailList from '../utility/UtilityDetailList';
-  import UtilityHTMLContentRenderer from '../utility/UtilityHTMLContentRenderer';
+  import UtilityDetailList from '@/components/utility/UtilityDetailList';
+  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer';
 
   export default {
     name: 'SectionContent',
@@ -32,7 +44,7 @@
     },
     props: {
       /**
-       * Content containing HTML markup
+       * Section heading
        */
       heading: {
         type: String,
@@ -59,7 +71,7 @@
 </script>
 
 <style lang="scss">
-  .content-section {
+  .section-content {
     margin-bottom: 4em;
     padding-bottom: 4em;
     border-bottom: 1px solid $border-color-default;
@@ -73,10 +85,10 @@
     }
   }
 
-  .content-section__col {
+  .section-content__col {
     width: 100%;
 
-    &--left {
+    &--first {
       @media (min-width: $layout-breakpoint-medium) {
         flex: 0 0 23%;
         margin-right: 3em;
@@ -84,7 +96,7 @@
     }
   }
 
-  .content-section h2 {
+  .section-content h2 {
     margin: 0 0 1em;
 
     @media (min-width: $layout-breakpoint-medium) {

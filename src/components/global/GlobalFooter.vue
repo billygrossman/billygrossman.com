@@ -5,10 +5,11 @@
         <p><span class="text--tag">Billy Grossman</span></p>
       </div>
       <div class="footer__second">
+        <p><a href="/">Home</a></p>
+        <p><a href="/components">Component Library</a></p>
         <p>
           <a :href="`mailto:${email}`">{{ email }}</a>
         </p>
-        <p><a href="/components">Component Library</a></p>
       </div>
     </div>
   </footer>
@@ -37,8 +38,10 @@
   }
 
   .footer__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media (min-width: $layout-breakpoint-small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 </style>

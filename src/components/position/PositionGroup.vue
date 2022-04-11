@@ -1,8 +1,9 @@
 <template>
-  <div class="position-group">
+  <div class="position-group" data-test="position-group">
     <PositionItem
       v-for="(item, index) in data"
       :key="index"
+      class="position-group__item"
       :class="`position-group__item--${index}`"
       :company="item.company"
       :description="item.description"
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-  import PositionItem from './PositionItem';
+  import PositionItem from '@/components/position/PositionItem';
 
   export default {
     name: 'PositionGroup',
@@ -25,7 +26,9 @@
     },
     props: {
       /**
-       * Collection of data to present
+       * Collection of data objects to render.
+       * Needs to match prop requirements
+       * for `PositionItem` component
        *
        * @var {Array} data
        */
@@ -36,3 +39,13 @@
     },
   };
 </script>
+
+<style lang="scss">
+  .position-group__item {
+    margin-bottom: 3em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+</style>

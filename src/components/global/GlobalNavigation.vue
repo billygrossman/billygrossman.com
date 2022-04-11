@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import { navigation } from '../../data/navigation';
+  import { navigation } from '@/data/navigation';
 
   export default {
     name: 'GlobalNavigation',

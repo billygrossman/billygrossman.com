@@ -1,5 +1,9 @@
 <template>
-  <component :is="tag" v-html="content"></component>
+  <component
+    :is="tag"
+    v-html="content"
+    data-test="html-content-renderer"
+  ></component>
 </template>
 
 <script>

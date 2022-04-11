@@ -1,27 +1,30 @@
 <template>
-  <div class="position-group__item posistion">
-    <h3>
+  <div class="position" data-test="position">
+    <h3 data-test="position-heading">
       <span class="position__company"> {{ company }}, {{ location }} </span> -
       <span class="position__job-title">{{ jobTitle }}</span>
     </h3>
 
-    <p class="position__dates">{{ startDate }} - {{ endDate }}</p>
+    <p data-test="position-dates" class="position__dates">
+      {{ startDate }} - {{ endDate }}
+    </p>
 
     <UtilityHTMLContentRenderer
       class="position__description"
+      data-test="position-description"
       v-if="description"
       :content="description"
     ></UtilityHTMLContentRenderer>
 
-    <div class="position__responsibilities">
+    <div class="position__responsibilities" data-test="position-list-wrapper">
       <UtilityDetailList :items="responsibilities"></UtilityDetailList>
     </div>
   </div>
 </template>
 
 <script>
-  import UtilityDetailList from '../utility/UtilityDetailList';
-  import UtilityHTMLContentRenderer from '../utility/UtilityHTMLContentRenderer';
+  import UtilityDetailList from '@/components/utility/UtilityDetailList';
+  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer';
 
   export default {
     name: 'PositionItem',
@@ -63,7 +66,6 @@
       },
 
       /**
-       *
        * Company location
        */
       location: {
@@ -91,11 +93,11 @@
 </script>
 
 <style lang="scss">
-  .position-group__item {
+  .position {
     margin-bottom: 3em;
   }
 
-  .position-group__item h3 {
+  .position h3 {
     margin-bottom: 6px;
   }
 
