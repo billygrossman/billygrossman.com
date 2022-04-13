@@ -7,7 +7,7 @@ The production website can be viewed at https://www.billygrossman.com.
 
 ## Component Library & CSS Helpers
 
-I choose not to use an existing UI framework for the sake of simplicity. The idea is to have only what is required on hand, with new components and UI treatments being added as needed.
+I chose not to use an existing UI framework for the sake of simplicity. The idea is to have only what is required on hand, with new components and UI treatments being added as needed.
 
 The component library can be viewed here https://www.billygrossman.com/components.
 
