@@ -26,14 +26,16 @@
   </SectionContent>
 </template>
 
-<script>
+<script lang="ts">
   import { mapGetters } from 'vuex';
 
-  import PositionGroup from '@/components/position/PositionGroup';
-  import SectionHeader from '@/components/section/SectionHeader';
-  import SectionContent from '@/components/section/SectionContent';
+  import PositionGroup from '@/components/position/PositionGroup.vue';
+  import SectionHeader from '@/components/section/SectionHeader.vue';
+  import SectionContent from '@/components/section/SectionContent.vue';
 
-  export default {
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     components: {
       PositionGroup,
       SectionContent,
@@ -49,5 +51,5 @@
         tertiaryContent: 'getTertiaryContent',
       }),
     },
-  };
+  });
 </script>

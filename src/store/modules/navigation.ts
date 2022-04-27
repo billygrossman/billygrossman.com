@@ -1,4 +1,17 @@
-const state = () => ({
+import { GetterTree } from 'vuex';
+
+export type NavItem = {
+  name: string;
+  href: string;
+  target: string;
+};
+
+export type NavState = {
+  primary: Array<NavItem>;
+  utility: Array<NavItem>;
+};
+
+const state: NavState = {
   primary: [
     {
       name: '< bg/>',
@@ -23,26 +36,31 @@ const state = () => ({
       target: '_blank',
     },
   ],
-});
+};
 
-const getters = {
+export type Getters = {
+  getPrimary(state: NavState): Array<NavItem>;
+  getUtility(state: NavState): Array<NavItem>;
+};
+
+export const getters: GetterTree<NavState, any> & Getters = {
   /**
    * Retrive the primary navigation items
    *
-   * @param {Object} state
-   * @returns {Array}
+   * @param state
+   * @returns Primary navigation items
    */
-  getPrimary: (state) => {
+  getPrimary: (state: NavState) => {
     return state.primary;
   },
 
   /**
    * Retrive the utility navigation items
    *
-   * @param {Object} state
-   * @returns {Array}
+   * @param state
+   * @returns Utility navigation items
    */
-  getUtility: (state) => {
+  getUtility: (state: NavState) => {
     return state.utility;
   },
 };

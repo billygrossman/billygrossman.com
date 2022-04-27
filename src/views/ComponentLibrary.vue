@@ -193,14 +193,16 @@
   </SectionContent>
 </template>
 
-<script>
-  import PositionItem from '@/components/position/PositionItem';
-  import SectionContent from '@/components/section/SectionContent';
-  import UtilityDetailList from '@/components/utility/UtilityDetailList';
-  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer';
-  import UtilityTable from '@/components/utility/UtilityTable';
+<script lang="ts">
+  import PositionItem from '@/components/position/PositionItem.vue';
+  import SectionContent from '@/components/section/SectionContent.vue';
+  import UtilityDetailList from '@/components/utility/UtilityDetailList.vue';
+  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer.vue';
+  import UtilityTable from '@/components/utility/UtilityTable.vue';
 
-  export default {
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     components: {
       PositionItem,
       SectionContent,
@@ -256,7 +258,7 @@
         ],
       };
     },
-  };
+  });
 </script>
 
 <style lang="scss">

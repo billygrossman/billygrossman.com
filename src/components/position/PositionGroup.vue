@@ -16,10 +16,11 @@
   </div>
 </template>
 
-<script>
-  import PositionItem from '@/components/position/PositionItem';
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  import PositionItem from '@/components/position/PositionItem.vue';
 
-  export default {
+  export default defineComponent({
     name: 'PositionGroup',
     components: {
       PositionItem,
@@ -37,7 +38,7 @@
         required: true,
       },
     },
-  };
+  });
 </script>
 
 <style lang="scss">

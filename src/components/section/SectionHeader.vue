@@ -2,7 +2,9 @@
   <header class="header">
     <div class="header__left">
       <h1 class="header__title">
-        {{ content.firstName }}<br />{{ content.lastName }}
+        <span class="text--highlight">{{ content.firstName }}</span>
+        <br />
+        <span class="text--highlight">{{ content.lastName }}</span>
       </h1>
 
       <p class="header__subtitle">{{ content.professionalTitle }}</p>
@@ -26,8 +28,10 @@
   </header>
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     name: 'SectionHeader',
     props: {
       /**
@@ -38,7 +42,7 @@
         required: true,
       },
     },
-  };
+  });
 </script>
 
 <style lang="scss">
