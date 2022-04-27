@@ -8,15 +8,17 @@
   <GlobalFooter></GlobalFooter>
 </template>
 
-<script>
-  import GlobalFooter from '@/components/global/GlobalFooter';
-  import GlobalNavigation from '@/components/global/GlobalNavigation';
+<script lang="ts">
+  import GlobalFooter from '@/components/global/GlobalFooter.vue';
+  import GlobalNavigation from '@/components/global/GlobalNavigation.vue';
 
-  export default {
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     name: 'App',
     components: {
       GlobalFooter,
       GlobalNavigation,
     },
-  };
+  });
 </script>

@@ -1,4 +1,22 @@
-const state = () => ({
+import { GetterTree } from 'vuex';
+
+export type Contact = {
+  firstName: string;
+  lastName: string;
+  professionalTitle: string;
+  location: string;
+  email: string;
+  website: string;
+  resume: string;
+};
+
+export type ContentState = {
+  contact: Contact;
+  primary: object;
+  tertiary: object;
+};
+
+export const state: ContentState = {
   contact: {
     firstName: 'Billy',
     lastName: 'Grossman',
@@ -61,56 +79,64 @@ const state = () => ({
       },
     ],
   },
-});
+};
 
-const getters = {
+export type Getters = {
+  getPrimaryContent(state: ContentState): object;
+  getContact(state: ContentState): object;
+  getContactEmail(state: ContentState): string;
+  getContactFullName(state: ContentState): string;
+  getTertiaryContent(state: ContentState): object;
+};
+
+export const getters: GetterTree<ContentState, any> & Getters = {
   /**
    * Retrive primary content sections
    *
-   * @param {Object} state
-   * @returns {Array}
+   * @param state
+   * @returns Primary content
    */
-  getPrimaryContent: (state) => {
+  getPrimaryContent: (state: ContentState) => {
     return state.primary;
   },
 
   /**
    * Retrive contact information
    *
-   * @param {Object} state
-   * @returns {Array}
+   * @param state
+   * @returns Contact data
    */
-  getContact: (state) => {
+  getContact: (state: ContentState) => {
     return state.contact;
   },
 
   /**
    * Helper to retrieve contact email
    *
-   * @param {Object} state
-   * @returns {String}
+   * @param state
+   * @returns Contact email address
    */
-  getContactEmail: (state) => {
+  getContactEmail: (state: ContentState) => {
     return state.contact.email;
   },
 
   /**
    * Helper to get full name
    *
-   * @param {Object} state
-   * @returns {String}
+   * @param state
+   * @returns Contacts full name
    */
-  getContactFullName: (state) => {
+  getContactFullName: (state: ContentState) => {
     return `${state.contact.firstName} ${state.contact.lastName}`;
   },
 
   /**
    * Retrive tertiary content
    *
-   * @param {Object} state
-   * @returns {Array}
+   * @param state
+   * @returns Tertiary content data
    */
-  getTertiaryContent: (state) => {
+  getTertiaryContent: (state: ContentState) => {
     return state.tertiary;
   },
 };

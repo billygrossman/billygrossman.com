@@ -1,4 +1,20 @@
-const state = () => ({
+import { GetterTree } from 'vuex';
+
+export type Position = {
+  company: string;
+  description: string | boolean;
+  endDate: string;
+  jobTitle: string;
+  location: string;
+  responsibilities: Array<string>;
+  startDate: string;
+};
+
+export type PositionsState = {
+  positions: Array<Position>;
+};
+
+const state: PositionsState = {
   positions: [
     {
       company: 'InsureMyTrip',
@@ -102,9 +118,13 @@ const state = () => ({
       startDate: '2015',
     },
   ],
-});
+};
 
-const getters = {
+export type Getters = {
+  getPositions(state: PositionsState): Array<Position>;
+};
+
+export const getters: GetterTree<PositionsState, any> & Getters = {
   /**
    * Retrieve position data
    *
