@@ -29,10 +29,11 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
   import { mapGetters } from 'vuex';
+  import { defineComponent } from 'vue';
 
-  export default {
+  export default defineComponent({
     name: 'GlobalNavigation',
     computed: {
       ...mapGetters('navigation', {
@@ -40,7 +41,7 @@
         utility: 'getUtility',
       }),
     },
-  };
+  });
 </script>
 
 <style lang="scss">

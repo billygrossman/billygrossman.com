@@ -12,7 +12,7 @@ describe('UtilityDetailList', () => {
   });
 
   it('renders container', () => {
-    expect(wrapper.exists('[data-test="detail-list"]'));
+    expect(wrapper.attributes('data-test')).toBe('detail-list');
   });
 
   it('renders items', () => {

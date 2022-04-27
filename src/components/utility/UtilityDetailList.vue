@@ -13,10 +13,12 @@
   </ul>
 </template>
 
-<script>
-  import UtilityHTMLContentRenderer from './UtilityHTMLContentRenderer';
+<script lang="ts">
+  import UtilityHTMLContentRenderer from './UtilityHTMLContentRenderer.vue';
 
-  export default {
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     name: 'UtilityDetailList',
     components: {
       UtilityHTMLContentRenderer,
@@ -30,7 +32,7 @@
         default: () => [],
       },
     },
-  };
+  });
 </script>
 
 <style lang="scss">

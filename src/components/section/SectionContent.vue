@@ -32,11 +32,13 @@
   </section>
 </template>
 
-<script>
-  import UtilityDetailList from '@/components/utility/UtilityDetailList';
-  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer';
+<script lang="ts">
+  import UtilityDetailList from '@/components/utility/UtilityDetailList.vue';
+  import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer.vue';
 
-  export default {
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
     name: 'SectionContent',
     components: {
       UtilityDetailList,
@@ -67,7 +69,7 @@
         default: () => [],
       },
     },
-  };
+  });
 </script>
 
 <style lang="scss">
