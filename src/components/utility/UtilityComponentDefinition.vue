@@ -11,8 +11,16 @@
 
     <UtilityTable
       v-if="props"
-      :headers="defaultheaders"
+      :headers="apiTableHeaders"
       :body="props"
+    ></UtilityTable>
+
+    <h4 v-if="slots">Slots</h4>
+
+    <UtilityTable
+      v-if="slots"
+      :headers="slotTableHeaders"
+      :body="slots"
     ></UtilityTable>
 
     <h4 v-if="hasDisplay">Display</h4>
@@ -59,13 +67,22 @@
        * Component Props
        */
       props: {
-        type: [Object, Boolean],
+        type: [Array, Boolean],
+        default: false,
+      },
+
+      /**
+       * Component Slots
+       */
+      slots: {
+        type: [Array, Boolean],
         default: false,
       },
     },
     data() {
       return {
-        defaultheaders: ['Name', 'Type', 'Default', 'Required'],
+        apiTableHeaders: ['Name', 'Type', 'Default', 'Required'],
+        slotTableHeaders: ['Name', 'Description'],
       };
     },
   });

@@ -82,6 +82,19 @@
     </template>
   </SectionContent>
 
+  <SectionContent heading="Section">
+    <template #main>
+      <UtilityComponentDefinition
+        :has-display="false"
+        heading="SectionContent"
+        description="Displays a responsive main section layout. Two column with heading on left and content area on right. Stacks for smaller screen widths."
+        :props="sectionContent.props"
+        :slots="sectionContent.slots"
+      >
+      </UtilityComponentDefinition>
+    </template>
+  </SectionContent>
+
   <SectionContent heading="Utility">
     <template #main>
       <UtilityComponentDefinition
@@ -159,6 +172,19 @@
           { name: '$text-color-green', value: '#690' },
           { name: '$text-color-red', value: '#905' },
         ],
+        sectionContent: {
+          props: [
+            ['heading', 'String', '–', 'true'],
+            ['content', 'String', '–', 'true'],
+            ['details', 'Array', '[]', 'false'],
+          ],
+          slots: [
+            [
+              'main',
+              'Default slot to show any HTML content. Displays last, proceeding detail list (if provided).',
+            ],
+          ],
+        },
         positionGroup: {
           props: [['data', 'Array', '–', 'true']],
         },
