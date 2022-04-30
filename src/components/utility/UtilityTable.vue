@@ -70,6 +70,7 @@
     text-align: left;
     border-bottom: 1px solid $border-color-default;
     padding: 8px;
+    min-width: 112px;
   }
 
   th {
