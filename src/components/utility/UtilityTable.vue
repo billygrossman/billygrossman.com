@@ -76,4 +76,12 @@
     color: $text-color-gray;
     font-size: 0.75rem;
   }
+
+  tr {
+    transition: background-color ease 0.2s;
+
+    &:hover {
+      background: $background-gray;
+    }
+  }
 </style>

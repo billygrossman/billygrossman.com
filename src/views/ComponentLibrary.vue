@@ -5,39 +5,37 @@
 
   <SectionContent heading="Colors">
     <template #main>
-      <div class="component">
-        <div class="component__description">
-          <h3>
-            <code class="color--red text--bold">Colors</code>
-          </h3>
-          <p>Available colors for the application theme</p>
-        </div>
-
-        <div class="component__colors">
-          <div
-            class="component__color"
-            v-for="(color, index) in colors"
-            :key="index"
-          >
+      <UtilityComponentDefinition
+        heading="Colors"
+        description="Available colors for the application theme."
+      >
+        <template #main>
+          <div class="component__colors">
             <div
-              class="component__color-sample"
-              :style="`background-color: ${color.value}`"
-            ></div>
-            <div class="component__color-name">{{ color.name }}</div>
-            <div class="component__color-value">{{ color.value }}</div>
+              class="component__color"
+              v-for="(color, index) in colors"
+              :key="index"
+            >
+              <div
+                class="component__color-sample"
+                :style="`background-color: ${color.value}`"
+              ></div>
+              <div class="component__color-name">{{ color.name }}</div>
+              <div class="component__color-value">{{ color.value }}</div>
+            </div>
           </div>
-        </div>
-      </div>
+        </template>
+      </UtilityComponentDefinition>
     </template>
   </SectionContent>
 
   <SectionContent heading="Typography">
     <template #main>
-      <div class="component">
-        <div class="component__description">
-          <h3>
-            <code class="color--red text--bold">Text Helpers</code>
-          </h3>
+      <UtilityComponentDefinition
+        heading="Text Helpers"
+        description="Utility classes to apply stylized text treatments."
+      >
+        <template #main>
           <div
             v-for="(type, index) in typography"
             :key="index"
@@ -46,8 +44,8 @@
             <p :class="type.value">{{ type.name }}</p>
             <p class="text--mono text--bold color--blue">.{{ type.value }}</p>
           </div>
-        </div>
-      </div>
+        </template>
+      </UtilityComponentDefinition>
     </template>
   </SectionContent>
 
@@ -55,140 +53,77 @@
 
   <SectionContent heading="Position">
     <template #main>
-      <div class="component">
-        <div class="component__description">
-          <h3>
-            <code class="color--red text--bold">PositionItem</code>
-          </h3>
-          <p>Displays information about an individual job position.</p>
-        </div>
+      <UtilityComponentDefinition
+        heading="PositionItem"
+        description="Displays information about an individual job position."
+        :props="positionItem.props"
+      >
+        <template #main>
+          <PositionItem
+            class="container--border"
+            :company="positionItem.data.company"
+            :description="positionItem.data.description"
+            :end-date="positionItem.data.endDate"
+            :job-title="positionItem.data.jobTitle"
+            :location="positionItem.data.location"
+            :responsibilities="positionItem.data.responsibilities"
+            :start-date="positionItem.data.startDate"
+          ></PositionItem>
+        </template>
+      </UtilityComponentDefinition>
 
-        <h4>API</h4>
-        <UtilityTable
-          :headers="['Name', 'Type', 'Default', 'Required']"
-          :body="[
-            ['company', 'String', '–', 'true'],
-            ['description', 'String|Boolean', 'false', 'false'],
-            ['end-date', 'String', '–', 'true'],
-            ['job-title', 'String', '–', 'true'],
-            ['location', 'String', '–', 'true'],
-            ['responsibilities', 'Array', '–', 'true'],
-            ['start-date', 'String', '–', 'true'],
-          ]"
-        ></UtilityTable>
-
-        <h4>Display</h4>
-        <PositionItem
-          class="container--border"
-          company="Wigits, Inc."
-          description="sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecte"
-          end-date="PRESENT"
-          job-title="Director of Departments"
-          location="Townville, USA"
-          :responsibilities="[
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-            'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab',
-            'Illo inventore veritatis et quasi architecto beatae vitae',
-            'Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit',
-          ]"
-          start-date="JANUARY 2020"
-        ></PositionItem>
-      </div>
-
-      <div class="component">
-        <div class="component__description">
-          <h3><code class="color--red text--bold">PositionGroup</code></h3>
-          <p>Displays a collection of positions.</p>
-        </div>
-
-        <h4>API</h4>
-        <UtilityTable
-          :headers="['Name', 'Type', 'Default', 'Required']"
-          :body="[['data', 'Array', '–', 'true']]"
-        ></UtilityTable>
-      </div>
+      <UtilityComponentDefinition
+        :hasDisplay="false"
+        heading="PositionGroup"
+        description="Displays a collection of positions."
+        :props="positionGroup.props"
+      >
+      </UtilityComponentDefinition>
     </template>
   </SectionContent>
+
   <SectionContent heading="Utility">
     <template #main>
-      <div class="component">
-        <div class="component__description">
-          <h3><code class="color--red text--bold">UtilityDetailList</code></h3>
-          <p>Styled wrapper for list items.</p>
-        </div>
+      <UtilityComponentDefinition
+        heading="UtilityDetailList"
+        description="Styled wrapper for list items."
+        :props="utilityDetailList.props"
+      >
+        <template #main>
+          <UtilityDetailList
+            class="container--border component__detail-list"
+            :items="utilityDetailList.data"
+          ></UtilityDetailList>
+        </template>
+      </UtilityComponentDefinition>
 
-        <h4>API</h4>
-        <UtilityTable
-          :headers="['Name', 'Type', 'Default', 'Required']"
-          :body="[['items', 'Array', '–', 'true']]"
-        ></UtilityTable>
+      <UtilityComponentDefinition
+        heading="UtilityTable"
+        description="Styled wrapper for an HTML table."
+        :props="utilityTable.props"
+      >
+        <template #main>
+          <UtilityTable
+            class="container--border"
+            :headers="utilityTable.data.headers"
+            :body="utilityTable.data.body"
+          ></UtilityTable>
+        </template>
+      </UtilityComponentDefinition>
 
-        <h4>Display</h4>
-        <UtilityDetailList
-          class="container--border"
-          :items="[
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-            'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab',
-            'Illo inventore veritatis et quasi architecto beatae vitae',
-            'Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit',
-          ]"
-        ></UtilityDetailList>
-      </div>
-
-      <div class="component">
-        <div class="component__description">
-          <h3><code class="color--red text--bold">UtilityTable</code></h3>
-          <p>Styled wrapper for an HTML table.</p>
-        </div>
-
-        <h4>API</h4>
-        <UtilityTable
-          :headers="['Name', 'Type', 'Default', 'Required']"
-          :body="[
-            ['headers', 'Array', '–', 'true'],
-            ['body', 'Array', '–', 'true'],
-          ]"
-        ></UtilityTable>
-
-        <h4>Display</h4>
-        <UtilityTable
-          class="container--border"
-          :headers="['Person', 'Department', 'Position']"
-          :body="[
-            ['Joe', 'Engineering', 'Software Developer'],
-            ['Mary', 'Engineering', 'Automation Engineer'],
-            ['Hugo', 'Management', 'Engineering Manager'],
-          ]"
-        ></UtilityTable>
-      </div>
-
-      <div class="component">
-        <div class="component__description">
-          <h3>
-            <code class="color--red text--bold">
-              UtilityHTMLContentRenderer
-            </code>
-          </h3>
-          <p>Wrapper to inject HTML content on the page.</p>
-        </div>
-
-        <h4>API</h4>
-        <UtilityTable
-          :headers="['Name', 'Type', 'Default', 'Required']"
-          :body="[
-            ['content', 'String', '–', 'true'],
-            ['tag', 'String', 'div', 'false'],
-          ]"
-        ></UtilityTable>
-
-        <h4>Display</h4>
-        <UtilityHTMLContentRenderer
-          class="container--border"
-          :content="`This is a <strong>paragraph</strong> with <code>HTML</code> content!</p>`"
-          tag="p"
-        ></UtilityHTMLContentRenderer>
-      </div>
+      <UtilityComponentDefinition
+        heading="UtilityHTMLContentRenderer"
+        description="Wrapper to inject HTML content on the page."
+        :props="utilityHtmlContentRenderer.props"
+      >
+        <template #main>
+          <UtilityHTMLContentRenderer
+            class="container--border"
+            :content="utilityHtmlContentRenderer.data.content"
+            :tag="utilityHtmlContentRenderer.data.tag"
+          ></UtilityHTMLContentRenderer>
+        </template>
+      </UtilityComponentDefinition>
     </template>
   </SectionContent>
 </template>
@@ -196,6 +131,7 @@
 <script lang="ts">
   import PositionItem from '@/components/position/PositionItem.vue';
   import SectionContent from '@/components/section/SectionContent.vue';
+  import UtilityComponentDefinition from '@/components/utility/UtilityComponentDefinition.vue';
   import UtilityDetailList from '@/components/utility/UtilityDetailList.vue';
   import UtilityHTMLContentRenderer from '@/components/utility/UtilityHTMLContentRenderer.vue';
   import UtilityTable from '@/components/utility/UtilityTable.vue';
@@ -206,6 +142,7 @@
     components: {
       PositionItem,
       SectionContent,
+      UtilityComponentDefinition,
       UtilityDetailList,
       UtilityHTMLContentRenderer,
       UtilityTable,
@@ -215,13 +152,43 @@
         colors: [
           { name: '$accent-primary', value: '#74cbdf' },
           { name: '$accent-secondary', value: '#a25ffa' },
-          { name: '$background-color-gray', value: '#f4f4f4' },
+          { name: '$background-gray', value: '#f4f4f4' },
           { name: '$border-color-default', value: '#ddd' },
           { name: '$text-color-gray', value: '#424242' },
           { name: '$text-color-blue', value: '#1867c0' },
           { name: '$text-color-green', value: '#690' },
           { name: '$text-color-red', value: '#905' },
         ],
+        positionGroup: {
+          props: [['data', 'Array', '–', 'true']],
+        },
+        positionItem: {
+          props: [
+            ['company', 'String', '–', 'true'],
+            ['description', 'String|Boolean', 'false', 'false'],
+            ['end-date', 'String', '–', 'true'],
+            ['job-title', 'String', '–', 'true'],
+            ['location', 'String', '–', 'true'],
+            ['responsibilities', 'Array', '–', 'true'],
+            ['start-date', 'String', '–', 'true'],
+          ],
+          data: {
+            company: 'Wigits, Inc.',
+            description:
+              'sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consecte',
+            endDate: 'PRESENT',
+            jobTitle: 'Director of Departments',
+            location: 'Townville, USA',
+            responsibilities: [
+              'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
+              'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab',
+              'Illo inventore veritatis et quasi architecto beatae vitae',
+              'Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit',
+            ],
+            startDate: 'JANUARY 2020',
+          },
+        },
+        headers: ['Name', 'Type', 'Default', 'Required'],
         typography: [
           {
             value: 'text--bold',
@@ -256,6 +223,39 @@
             name: 'Gray Text',
           },
         ],
+        utilityDetailList: {
+          props: [['items', 'Array', '–', 'true']],
+          data: [
+            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
+            'Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab',
+            'Illo inventore veritatis et quasi architecto beatae vitae',
+            'Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit',
+          ],
+        },
+        utilityHtmlContentRenderer: {
+          props: [
+            ['content', 'String', '–', 'true'],
+            ['tag', 'String', 'div', 'false'],
+          ],
+          data: {
+            content: `This is a <strong class="color--blue">paragraph</strong> with <code class="color--red">HTML</code> content!`,
+            tag: 'p',
+          },
+        },
+        utilityTable: {
+          props: [
+            ['headers', 'Array', '–', 'true'],
+            ['body', 'Array', '–', 'true'],
+          ],
+          data: {
+            headers: ['Person', 'Department', 'Position'],
+            body: [
+              ['Joe', 'Engineering', 'Software Developer'],
+              ['Mary', 'Engineering', 'Automation Engineer'],
+              ['Hugo', 'Management', 'Engineering Manager'],
+            ],
+          },
+        },
       };
     },
   });
@@ -289,10 +289,6 @@
         border: 0 none;
         margin-bottom: 0;
       }
-    }
-
-    .component__description {
-      margin-bottom: 16px;
     }
 
     .utility-table {
@@ -352,6 +348,10 @@
 
     .component__color-value {
       @extend .text--mono;
+    }
+
+    .component__detail-list {
+      padding-left: 3em;
     }
 
     .text-definition {
