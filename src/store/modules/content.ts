@@ -1,13 +1,17 @@
 import { GetterTree } from 'vuex';
 
 export type Contact = {
-  firstName: string;
-  lastName: string;
-  professionalTitle: string;
-  location: string;
+  alumniOf: string;
   email: string;
-  website: string;
+  firstName: string;
+  gender: string;
+  image: string;
+  lastName: string;
+  links: Array<string>;
+  location: string;
+  professionalTitle: string;
   resume: string;
+  website: string;
 };
 
 export type ContentState = {
@@ -18,13 +22,20 @@ export type ContentState = {
 
 export const state: ContentState = {
   contact: {
-    firstName: 'Billy',
-    lastName: 'Grossman',
-    professionalTitle: 'Software Engineer',
-    location: 'Greater Boston Area (Remote)',
+    alumniOf: 'New England Institute of Technology',
     email: 'billy.grossman@gmail.com',
-    website: 'billygrossman.com',
+    gender: 'male',
+    firstName: 'Billy',
+    image: 'https://www.billygrossman.com/headshot.jpeg',
+    lastName: 'Grossman',
+    links: [
+      'https://github.com/billygrossman/',
+      'https://www.linkedin.com/in/billygrossman',
+    ],
+    location: 'Greater Boston Area (Remote)',
+    professionalTitle: 'Software Engineer',
     resume: './billy-grossman-resume.pdf',
+    website: 'https://www.billygrossman.com',
   },
   primary: {
     sections: [
