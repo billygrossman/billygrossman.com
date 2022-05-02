@@ -1,4 +1,6 @@
 <template>
+  <StructuredDataPerson></StructuredDataPerson>
+
   <SectionHeader :content="contact"></SectionHeader>
 
   <SectionContent
@@ -28,18 +30,19 @@
 
 <script lang="ts">
   import { mapGetters } from 'vuex';
+  import { defineComponent } from 'vue';
 
   import PositionGroup from '@/components/position/PositionGroup.vue';
   import SectionHeader from '@/components/section/SectionHeader.vue';
   import SectionContent from '@/components/section/SectionContent.vue';
-
-  import { defineComponent } from 'vue';
+  import StructuredDataPerson from '../components/structuredData/StructuredDataPerson.vue';
 
   export default defineComponent({
     components: {
       PositionGroup,
       SectionContent,
       SectionHeader,
+      StructuredDataPerson,
     },
     computed: {
       ...mapGetters('positions', {
