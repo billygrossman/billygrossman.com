@@ -20,7 +20,7 @@ const state: PositionsState = {
       company: 'InsureMyTrip',
       description: false,
       endDate: 'PRESENT',
-      jobTitle: 'Senior Software Engineer',
+      jobTitle: 'Lead Software Engineer',
       location: 'Warwick RI',
       responsibilities: [
         'Lead scrum team in project planning and decision making',
@@ -34,7 +34,7 @@ const state: PositionsState = {
       company: 'InsureMyTrip',
       description: false,
       endDate: 'DECEMBER 2019',
-      jobTitle: 'Web Applications Developer',
+      jobTitle: 'Senior Software Engineer',
       location: 'Warwick RI',
       responsibilities: [
         'Work in a full stack role using technologies such as Vue.js, PHP, Python, MariaDB, and Javascript',
