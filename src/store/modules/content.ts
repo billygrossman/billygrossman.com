@@ -7,17 +7,27 @@ export type Contact = {
   gender: string;
   image: string;
   lastName: string;
-  links: Array<string>;
+  links: string[];
   location: string;
   professionalTitle: string;
   resume: string;
   website: string;
 };
 
+export type ContentSection = {
+  title: string;
+  content: string;
+  details: string[];
+};
+
+export type ContentGroup = {
+  sections: ContentSection[];
+};
+
 export type ContentState = {
   contact: Contact;
-  primary: object;
-  tertiary: object;
+  primary: ContentGroup;
+  tertiary: ContentGroup;
 };
 
 export const state: ContentState = {
@@ -54,15 +64,20 @@ export const state: ContentState = {
       },
       {
         title: 'Skills',
-        content: `I am a full stack developer focusing more on frontend technology and user facing applications. I also enjoy API design and cloud architecture.`,
+        content: `I am a full stack developer with a strong focus on frontend architecture, user-facing applications, API design, and cloud-based systems. I enjoy building thoughtful interfaces, maintainable component systems, and practical serverless solutions that help teams move with confidence.`,
         details: [
-          'Highly skilled in creating performant <span class="text--tag">HTML</span>, <span class="text--tag">CSS</span>',
-          'Experienced with JavaScript Frameworks (<span class="text--tag">Vue</span>, <span class="text--tag">Nuxt</span>, <span class="text--tag">React</span>) and Templating Languages (<span class="text--tag">Pug</span>, <span class="text--tag">Jinja2</span>)',
-          'Passionate about <span class="text--tag">CSS</span> Methodologies (I lean to <span class="text--tag">BEM</span>) and CSS Preprocessors (leaning hard at <span class="text--tag">SCSS</span>)',
-          'Proficient with Task Runners / Build Tools (<span class="text--tag">WebPack</span>, <span class="text--tag">Grunt</span>, <span class="text--tag">Gulp</span>) and Package Managers (<span class="text--tag">NPM</span>, <span class="text--tag">Yarn</span>, <span class="text--tag">Composer</span>) and <span class="text--tag">Git</span> Version Control Systems',
-          'Skilled in creating Design Systems, <span class="text--tag">Component Libraries</span>, Prototypes and Style Guides',
-          'Advocate for <span class="text--tag">WCAG Website Compliance Standards</span> and Accessibility for all users',
-          'Proficient with cloud technologies (<span class="text--tag">AWS</span>) and containerization (<span class="text--tag">Docker</span>)',
+          'Highly skilled in creating semantic, performant <span class="text--tag">HTML</span>, <span class="text--tag">CSS</span>, and responsive application interfaces',
+          'Experienced with <span class="text--tag">JavaScript</span> and <span class="text--tag">TypeScript</span> frameworks including <span class="text--tag">Vue</span>, <span class="text--tag">Nuxt</span>, and <span class="text--tag">React</span>, plus templating languages such as <span class="text--tag">Pug</span> and <span class="text--tag">Jinja2</span>',
+          'Comfortable with modern frontend build workflows using <span class="text--tag">Vite</span>, <span class="text--tag">Webpack</span>, <span class="text--tag">NPM</span>, <span class="text--tag">Yarn</span>, <span class="text--tag">Composer</span>, and <span class="text--tag">Git</span>',
+          'Skilled in creating <span class="text--tag">Design Systems</span>, <span class="text--tag">Component Libraries</span>, prototypes, reusable patterns, and style guides',
+          'Strong advocate for <span class="text--tag">WCAG</span> accessibility standards, inclusive UX, semantic markup, and frontend performance',
+          'Experienced with API design, RESTful services, and backend development using <span class="text--tag">PHP</span>, <span class="text--tag">Python</span>, <span class="text--tag">Node.js</span>, <span class="text--tag">SQL</span>, and <span class="text--tag">MariaDB</span>',
+          'Proficient with <span class="text--tag">WordPress</span> development, CMS architecture, content modeling, custom themes, and maintainable editorial workflows',
+          'Experienced with <span class="text--tag">Salesforce</span> objects, API usage, data integrations, and translating business processes into reliable platform-connected workflows',
+          'Proficient with <span class="text--tag">AWS</span> cloud services including <span class="text--tag">S3</span>, <span class="text--tag">API Gateway</span>, <span class="text--tag">Lambda</span>, <span class="text--tag">DynamoDB</span>, and <span class="text--tag">AWS SAM</span>',
+          'Familiar with containerization, local development, and deployment workflows using <span class="text--tag">Docker</span> and CI/CD practices',
+          'Pragmatic user of <span class="text--tag">AI-assisted development</span> and <span class="text--tag">LLM</span> tools for prototyping, code review support, documentation, debugging, and developer productivity',
+          'Collaborative technical lead with experience in Agile planning, cross-team communication, stakeholder alignment, and mentorship',
         ],
       },
     ],
@@ -83,7 +98,7 @@ export const state: ContentState = {
           `,
         details: [
           'Move content to cloud document store',
-          'Update to use <span class="text--tag">Typescript</span>',
+          'Continue expanding <span class="text--tag">TypeScript</span> coverage and type safety',
           'Implement robust grid layout system',
           'Add more text and typography helper classes',
         ],
@@ -93,14 +108,14 @@ export const state: ContentState = {
 };
 
 export type Getters = {
-  getPrimaryContent(state: ContentState): object;
-  getContact(state: ContentState): object;
+  getPrimaryContent(state: ContentState): ContentGroup;
+  getContact(state: ContentState): Contact;
   getContactEmail(state: ContentState): string;
   getContactFullName(state: ContentState): string;
-  getTertiaryContent(state: ContentState): object;
+  getTertiaryContent(state: ContentState): ContentGroup;
 };
 
-export const getters: GetterTree<ContentState, any> & Getters = {
+export const getters: GetterTree<ContentState, unknown> & Getters = {
   /**
    * Retrive primary content sections
    *

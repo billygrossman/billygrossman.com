@@ -7,8 +7,8 @@ export type NavItem = {
 };
 
 export type NavState = {
-  primary: Array<NavItem>;
-  utility: Array<NavItem>;
+  primary: NavItem[];
+  utility: NavItem[];
 };
 
 const state: NavState = {
@@ -39,11 +39,11 @@ const state: NavState = {
 };
 
 export type Getters = {
-  getPrimary(state: NavState): Array<NavItem>;
-  getUtility(state: NavState): Array<NavItem>;
+  getPrimary(state: NavState): NavItem[];
+  getUtility(state: NavState): NavItem[];
 };
 
-export const getters: GetterTree<NavState, any> & Getters = {
+export const getters: GetterTree<NavState, unknown> & Getters = {
   /**
    * Retrive the primary navigation items
    *
