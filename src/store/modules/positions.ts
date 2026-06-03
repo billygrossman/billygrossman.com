@@ -2,16 +2,16 @@ import { GetterTree } from 'vuex';
 
 export type Position = {
   company: string;
-  description: string | boolean;
+  description: string | false;
   endDate: string;
   jobTitle: string;
   location: string;
-  responsibilities: Array<string>;
+  responsibilities: string[];
   startDate: string;
 };
 
 export type PositionsState = {
-  positions: Array<Position>;
+  positions: Position[];
 };
 
 const state: PositionsState = {
@@ -23,10 +23,12 @@ const state: PositionsState = {
       jobTitle: 'Lead Software Engineer',
       location: 'Warwick RI',
       responsibilities: [
-        'Lead scrum team in project planning and decision making',
-        'Act as a liaison to manage cross-team dependencies',
-        'Regularly meet with stakeholders to prioritize and outline work',
-        'Team mentorship',
+        'Lead scrum team in project planning, technical decision making, and delivery of business-critical applications',
+        'Provide architecture guidance across frontend, API, and cloud-based systems while remaining hands-on as an individual contributor',
+        'Design and implement maintainable solutions using technologies such as Vue.js, TypeScript, PHP, Python, MariaDB, and AWS',
+        'Act as a liaison to manage cross-team dependencies, align implementation details, and reduce delivery risk',
+        'Regularly meet with stakeholders to prioritize work, clarify requirements, and translate business needs into engineering plans',
+        'Mentor developers through code reviews, technical guidance, and day-to-day support',
       ],
       startDate: 'DECEMBER 2019',
     },
@@ -95,6 +97,24 @@ const state: PositionsState = {
       startDate: 'FEBRUARY 2015',
     },
     {
+      company: 'Who Goes First, Today?',
+      description: `<p>
+        <a href="https://whogoesfirst.today/" target="_blank">Who Goes First, Today?</a>
+        is a small personal web app I built to make everyday first-turn decisions a little easier and more fun.
+        It generates lightweight prompts with configurable categories, seasonal themes, color modes, and a simple share-friendly experience.
+        </p>`,
+      endDate: 'LIVE',
+      jobTitle: 'Creator & Developer',
+      location: 'Personal Project',
+      responsibilities: [
+        'Designed and built a focused decision-helper application with a playful, approachable user experience',
+        'Created configurable content categories for casual, silly, professional, neutral, kids, and family use cases',
+        'Implemented theme and color mode settings to make a small utility feel polished, flexible, and reusable',
+        'Maintained the project as a live personal product with versioned updates, contact pathways, and share functionality',
+      ],
+      startDate: 'PERSONAL PROJECT',
+    },
+    {
       company: 'TinnBin',
       description: `<p>TinnBin started out as a labor of love for me, but it quickly became an unsustainable personal project.
         I really enjoyed building everything about this application, and it exposed me to unfamiliar
@@ -121,10 +141,10 @@ const state: PositionsState = {
 };
 
 export type Getters = {
-  getPositions(state: PositionsState): Array<Position>;
+  getPositions(state: PositionsState): Position[];
 };
 
-export const getters: GetterTree<PositionsState, any> & Getters = {
+export const getters: GetterTree<PositionsState, unknown> & Getters = {
   /**
    * Retrieve position data
    *
