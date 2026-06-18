@@ -20,7 +20,7 @@
       </p>
 
       <p>
-        <a :href="`//${content.website}`">
+        <a :href="`${content.website}`">
           {{ content.website }}
         </a>
       </p>
