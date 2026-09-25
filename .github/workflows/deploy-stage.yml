@@ -31,5 +31,8 @@ jobs:
       - name: Build static site
         run: npm install && npm run build
 
-      - name: Deploy site
-        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "robots.txt"
+      - name: Deploy assets
+        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --exclude "index.html" --exclude "robots.txt"
+
+      - name: Deploy HTML without caching
+        run: aws s3 cp ./dist/index.html s3://${{ secrets.AWS_S3_BUCKET }}/index.html --content-type "text/html" --cache-control "no-cache, no-store, must-revalidate"
