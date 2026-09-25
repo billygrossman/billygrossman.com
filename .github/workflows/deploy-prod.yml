@@ -32,8 +32,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy site
-        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "robots.txt"
+      - name: Deploy assets
+        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --exclude "index.html" --exclude "robots.txt"
+
+      - name: Deploy HTML without caching
+        run: aws s3 cp ./dist/index.html s3://${{ secrets.AWS_S3_BUCKET }}/index.html --content-type "text/html" --cache-control "no-cache, no-store, must-revalidate"
 
       - name: Create Cache Invalidation
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths /*
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
