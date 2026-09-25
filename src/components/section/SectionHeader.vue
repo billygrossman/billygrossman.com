@@ -47,13 +47,14 @@
 
 <style lang="scss">
   .header {
-    justify-content: space-between;
-    align-items: end;
     margin: 5em auto 6em;
     max-width: $contain-width;
 
     @media (min-width: $layout-breakpoint-medium) {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 3rem;
+      align-items: end;
     }
   }
 
@@ -66,7 +67,7 @@
   }
 
   .header__title {
-    font-size: 4em;
+    font-size: clamp(2.5rem, 9vw, 4rem);
     font-weight: 900;
     line-height: 1.15em;
     margin: 0 0 0.25em;
@@ -93,17 +94,22 @@
   }
 
   .header__subtitle {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 0;
-    letter-spacing: 4px;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
 
     @media (min-width: $layout-breakpoint-medium) {
-      font-size: 3vw;
+      font-size: clamp(1.5rem, 2.3vw, 2rem);
     }
 
     @media (min-width: $layout-breakpoint-large) {
-      font-size: 3em;
+      font-size: 2rem;
     }
+  }
+
+  .header__right {
+    overflow-wrap: anywhere;
   }
 
   .header__right p {

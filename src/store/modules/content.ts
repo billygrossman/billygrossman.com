@@ -42,8 +42,8 @@ export const state: ContentState = {
       'https://github.com/billygrossman/',
       'https://www.linkedin.com/in/billygrossman',
     ],
-    location: 'Greater Boston Area (Remote)',
-    professionalTitle: 'Software Engineer',
+    location: 'Greater Boston Area',
+    professionalTitle: 'Senior Software Engineer & Technical Lead',
     resume: './billy-grossman-resume.pdf',
     website: 'https://www.billygrossman.com',
   },
@@ -51,57 +51,46 @@ export const state: ContentState = {
     sections: [
       {
         title: 'About',
-        content: `<p>
-                I'm Billy, and I'm a problem solver, a team player, and a communicator. I’m
-                excited about all things related to web, engineering, and application
-                development. I've designed online solutions and architected projects of
-                various shapes and sizes while working with different types of businesses.
-                No two projects are the same, therefore I'm constantly improving my
-                abilities, adding new tools to my toolkit, and staying up to date on the
-                latest technologies and best practices.
-                </p>`,
+        content: `<p>I'm Billy. I like solving problems with thoughtful, practical software, and I enjoy the people side of building it just as much. Over the past 15 years, I've worked on everything from customer-facing ecommerce experiences to internal tools and the services behind them.</p>
+          <p>These days, much of my work is about making established systems easier to change: untangling legacy applications, building useful integrations, and helping teams find a clear path through complicated requirements. I still love getting hands-on with the code, learning new tools, and helping other developers grow along the way.</p>`,
         details: [],
       },
       {
         title: 'Skills',
-        content: `I am a full stack developer with a strong focus on frontend architecture, user-facing applications, API design, and cloud-based systems. I enjoy building thoughtful interfaces, maintainable component systems, and practical serverless solutions that help teams move with confidence.`,
-        details: [
-          'Highly skilled in creating semantic, performant <span class="text--tag">HTML</span>, <span class="text--tag">CSS</span>, and responsive application interfaces',
-          'Experienced with <span class="text--tag">JavaScript</span> and <span class="text--tag">TypeScript</span> frameworks including <span class="text--tag">Vue</span>, <span class="text--tag">Nuxt</span>, and <span class="text--tag">React</span>, plus templating languages such as <span class="text--tag">Pug</span> and <span class="text--tag">Jinja2</span>',
-          'Comfortable with modern frontend build workflows using <span class="text--tag">Vite</span>, <span class="text--tag">Webpack</span>, <span class="text--tag">NPM</span>, <span class="text--tag">Yarn</span>, <span class="text--tag">Composer</span>, and <span class="text--tag">Git</span>',
-          'Skilled in creating <span class="text--tag">Design Systems</span>, <span class="text--tag">Component Libraries</span>, prototypes, reusable patterns, and style guides',
-          'Strong advocate for <span class="text--tag">WCAG</span> accessibility standards, inclusive UX, semantic markup, and frontend performance',
-          'Experienced with API design, RESTful services, and backend development using <span class="text--tag">PHP</span>, <span class="text--tag">Python</span>, <span class="text--tag">Node.js</span>, <span class="text--tag">SQL</span>, and <span class="text--tag">MariaDB</span>',
-          'Proficient with <span class="text--tag">WordPress</span> development, CMS architecture, content modeling, custom themes, and maintainable editorial workflows',
-          'Experienced with <span class="text--tag">Salesforce</span> objects, API usage, data integrations, and translating business processes into reliable platform-connected workflows',
-          'Proficient with <span class="text--tag">AWS</span> cloud services including <span class="text--tag">S3</span>, <span class="text--tag">API Gateway</span>, <span class="text--tag">Lambda</span>, <span class="text--tag">DynamoDB</span>, and <span class="text--tag">AWS SAM</span>',
-          'Familiar with containerization, local development, and deployment workflows using <span class="text--tag">Docker</span> and CI/CD practices',
-          'Pragmatic user of <span class="text--tag">AI-assisted development</span> and <span class="text--tag">LLM</span> tools for prototyping, code review support, documentation, debugging, and developer productivity',
-          'Collaborative technical lead with experience in Agile planning, cross-team communication, stakeholder alignment, and mentorship',
-        ],
+        content: `
+          <p>I work across the full stack, with a particular interest in the places where good interfaces, reliable services, and real business needs meet.</p>
+          <section class="skill-group">
+            <h3>Frontend</h3>
+            <p>I enjoy the details that make an interface feel easy to use. Most of my recent work is in <span class="text--tag">Vue.js</span>, <span class="text--tag">Nuxt</span>, and <span class="text--tag">TypeScript</span>, and I've also built with <span class="text--tag">React</span>. I care about semantic <span class="text--tag">HTML</span>, responsive <span class="text--tag">CSS/SCSS</span>, <span class="text--tag">WCAG</span> accessibility, and performance. I like creating design systems and component libraries that make future work easier, with build tools such as <span class="text--tag">Vite</span> and <span class="text--tag">Webpack</span> supporting the workflow.</p>
+          </section>
+          <section class="skill-group">
+            <h3>Backend &amp; Cloud</h3>
+            <p>I'm comfortable following a problem beyond the browser. I build <span class="text--tag">REST APIs</span> and services with <span class="text--tag">PHP</span>, <span class="text--tag">Python</span>, and <span class="text--tag">Node.js</span>, often backed by <span class="text--tag">MariaDB</span> or another SQL database. On <span class="text--tag">AWS</span>, I've used S3, API Gateway, Lambda, DynamoDB, and EventBridge to connect systems and move functionality out of legacy applications. I use <span class="text--tag">Docker</span> and CI/CD workflows to make development and deployment more dependable.</p>
+          </section>
+          <section class="skill-group">
+            <h3>CMS &amp; Platforms</h3>
+            <p>I've spent a lot of time making content and business platforms work better together. In <span class="text--tag">WordPress</span> and <span class="text--tag">Drupal</span>, I've built custom themes and plugins, modeled content, and shaped workflows around the people who publish it. I've also worked with <span class="text--tag">Salesforce</span> objects and APIs to connect those experiences to business processes.</p>
+          </section>
+          <section class="skill-group">
+            <h3>Leadership &amp; Workflow</h3>
+            <p>I like working with stakeholders to turn a broad idea into a plan a team can build. I've led work in <span class="text--tag">Agile/Scrum</span> teams, reviewed code, mentored developers, and helped coordinate changes across teams. I also use <span class="text--tag">AI-assisted development</span> and LLM tools to explore ideas, debug, document decisions, and work through complex tasks.</p>
+          </section>
+        `,
+        details: [],
       },
     ],
   },
   tertiary: {
     sections: [
       {
-        title: 'More...',
+        title: 'About This Site',
         content: `
-            <h3>This Website</h3>
             <p>
-              The source code for this personal web application <a href="https://github.com/billygrossman/billygrossman.com" target="_blank">
-              is available on Github</a>. It's a fairly simple application, built using <span class="text--tag">Vue</span> and deployed to <span class="text--tag">AWS S3</span>.
-              I will continue to make improvements and updates to this application as it can serve as a clean frontend boilerplate.
+              I built this site with Vue and deploy it to AWS S3. The <a href="https://github.com/billygrossman/billygrossman.com?utm_source=billygrossman.com&amp;utm_medium=referral" target="_blank">source code is on GitHub</a>.
             </p>
-            <p>You can also check out the <a href="/components">Design Guide/Component library</a> to see how I like to structure <span class="text--tag">Vue</span> components.</p>
-            <p>Here are some features that are on deck:</p>
+            <p>Explore the <a href="/components">component library</a> for a closer look at how I structure Vue components.</p>
           `,
-        details: [
-          'Move content to cloud document store',
-          'Continue expanding <span class="text--tag">TypeScript</span> coverage and type safety',
-          'Implement robust grid layout system',
-          'Add more text and typography helper classes',
-        ],
+        details: [],
       },
     ],
   },
