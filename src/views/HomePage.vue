@@ -18,6 +18,12 @@
     </template>
   </SectionContent>
 
+  <SectionContent heading="Projects">
+    <template #main>
+      <PositionGroup :data="projects"></PositionGroup>
+    </template>
+  </SectionContent>
+
   <SectionContent
     v-for="(section, index) in tertiaryContent.sections"
     :key="index"
@@ -47,6 +53,7 @@
     computed: {
       ...mapGetters('positions', {
         positions: 'getPositions',
+        projects: 'getProjects',
       }),
       ...mapGetters('content', {
         contact: 'getContact',

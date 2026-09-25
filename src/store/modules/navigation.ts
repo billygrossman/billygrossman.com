@@ -20,12 +20,12 @@ const state: NavState = {
     },
     {
       name: 'Github',
-      href: 'https://github.com/billygrossman/',
+      href: 'https://github.com/billygrossman/?utm_source=billygrossman.com&utm_medium=referral',
       target: '_blank',
     },
     {
       name: 'Linkedin',
-      href: 'https://www.linkedin.com/in/billygrossman',
+      href: 'https://www.linkedin.com/in/billygrossman?utm_source=billygrossman.com&utm_medium=referral',
       target: '_blank',
     },
   ],

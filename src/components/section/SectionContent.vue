@@ -105,4 +105,17 @@
       margin-bottom: 0;
     }
   }
+
+  .section-content--skills .skill-group {
+    margin-top: 2rem;
+  }
+
+  .section-content--skills .skill-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-content--skills .skill-group p {
+    margin: 0;
+  }
 </style>
